@@ -44,7 +44,7 @@ public class OTPController {
         try {
             otpService.validateOTP(username, otp);
 
-            // Generate a JWT upon successful validation
+            // Generate a JWT on successful validation
             String token = jwtService.generateToken(username);
 
             return ResponseEntity.ok("OTP validated successfully. Token: " + token);

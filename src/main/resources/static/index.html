@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Send OTP</h1>
-<form id="sendOTPForm" action="/api/otp/send" method="POST">
+<form id="sendOTPForm" action="/otp/send" method="POST">
     <label for="otpUsername">Username:</label>
     <input type="text" id="otpUsername" name="username" required>
     <br>
@@ -13,7 +13,7 @@
 </form>
 
 <h1>Validate OTP</h1>
-<form id="validateOTPForm" action="/api/otp/validate" method="POST">
+<form id="validateOTPForm" action="/otp/validate" method="POST">
     <label for="validateUsername">Username:</label>
     <input type="text" id="validateUsername" name="username" required>
     <br>
@@ -24,7 +24,7 @@
 </form>
 
 <h1>Add User</h1>
-<form id="addUserForm" action="/api/user/add" method="POST">
+<form id="addUserForm" action="/user/add" method="POST">
     <label for="addUserUsername">Username:</label>
     <input type="text" id="addUserUsername" name="username" required>
     <br>

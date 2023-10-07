@@ -18,8 +18,8 @@ public class UserService {
     public String addUser(addUserDto addUserDto) {
 
         User user = new User();
-        user.setEmail(addUserDto.getEmailId());
-        user.setUsername(addUserDto.getUserName());
+        user.setEmail(addUserDto.getEmail());
+        user.setUsername(addUserDto.getUsername());
         userRepository.save(user);
         return "User has been added successfully...";
     }

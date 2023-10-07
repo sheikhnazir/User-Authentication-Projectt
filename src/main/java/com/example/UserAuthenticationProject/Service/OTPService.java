@@ -35,10 +35,10 @@ public class OTPService {
 
         User user = optionalUser.get();
 
-        // Generate a random OTP (you can customize the length and complexity)
+        // Generate a random OTP using generateRandomOTP function
         String otp = generateRandomOTP();
 
-        // Save the OTP in the database with an expiry time (e.g., 15 minutes from now)
+        // Save the OTP in the database with an expiry time (e.g. 15 minutes from now)
         LocalDateTime expiryTime = LocalDateTime.now().plusMinutes(15);
         OTP otpEntity = new OTP();
         otpEntity.setUsername(username);
@@ -65,24 +65,24 @@ public class OTPService {
 
     private String generateRandomOTP() {
 
-        // For simplicity, generate a 6-digit numeric OTP
+        //generating a 6-digit numeric OTP
         return String.valueOf((int) (Math.random() * 900000) + 100000);
     }
 
     public String validateOTP(String username, String otp) throws OTPException {
-        // Find the OTP record in the database for the given username
+        // Find the OTP if present in the database for the given username
         Optional<OTP> otpRecord = otpRepository.findByUsernameAndOtp(username, otp);
 
         if (otpRecord.isPresent()) {
-            // Check if the OTP is expired
+            // Check if the OTP is already expired
             LocalDateTime currentTime = LocalDateTime.now();
             if (currentTime.isAfter(otpRecord.get().getExpiryTime())) {
                 throw new OTPException("OTP has expired");
             }
-            // Delete the OTP record from the database after successful validation
+            // Delete the OTP record from the database after successful validation, to prevent for again verification
             otpRepository.delete(otpRecord.get());
 
-            // OTP is valid, you can proceed with your logic
+            // OTP is valid, so i can return from the function
             return "OTP validated successfully...";
         } else {
             throw new OTPException("Invalid OTP");

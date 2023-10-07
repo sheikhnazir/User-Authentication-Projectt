@@ -21,8 +21,8 @@ document.getElementById("addUserForm").addEventListener("submit", function (even
 });
 
 function sendOTP(username) {
-    // Implement AJAX or fetch to send OTP API
-    // Example: Use fetch to send a POST request
+    // Implementing AJAX or fetch to send OTP API
+    // Use fetch to send a POST request
     fetch("/otp/send", {
         method: "POST",
         headers: {
@@ -40,8 +40,8 @@ function sendOTP(username) {
 }
 
 function validateOTP(username, otp) {
-    // Implement AJAX or fetch to validate OTP API
-    // Example: Use fetch to send a POST request
+    // Implementing AJAX or fetch to validate OTP API
+    // Use fetch to send a POST request
     fetch("/otp/validate", {
         method: "POST",
         headers: {
@@ -59,8 +59,8 @@ function validateOTP(username, otp) {
 }
 
 function addUser(username, email) {
-    // Implement AJAX or fetch to add user API
-    // Example: Use fetch to send a POST request
+    // Implementing AJAX or fetch to add user API
+    // Use fetch to send a POST request
     fetch("/user/add", {
         method: "POST",
         headers: {
