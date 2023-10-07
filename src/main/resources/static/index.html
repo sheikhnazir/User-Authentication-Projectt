@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Authentication</title>
+</head>
+<body>
+<h1>Send OTP</h1>
+<form id="sendOTPForm" action="/api/otp/send" method="POST">
+    <label for="otpUsername">Username:</label>
+    <input type="text" id="otpUsername" name="username" required>
+    <br>
+    <input type="submit" value="Send OTP">
+</form>
+
+<h1>Validate OTP</h1>
+<form id="validateOTPForm" action="/api/otp/validate" method="POST">
+    <label for="validateUsername">Username:</label>
+    <input type="text" id="validateUsername" name="username" required>
+    <br>
+    <label for="otp">OTP:</label>
+    <input type="text" id="otp" name="otp" required>
+    <br>
+    <input type="submit" value="Validate OTP">
+</form>
+
+<h1>Add User</h1>
+<form id="addUserForm" action="/api/user/add" method="POST">
+    <label for="addUserUsername">Username:</label>
+    <input type="text" id="addUserUsername" name="username" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <br>
+    <input type="submit" value="Add User">
+</form>
+
+<script src="script.js"></script>
+</body>
+</html>
